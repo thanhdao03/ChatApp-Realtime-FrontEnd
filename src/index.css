@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+@media (any-pointer: fine) {
+  /* Works on Firefox */
+  * {
+    --bg-color: transparent;
+    --the-thumb: rgba(120, 120, 120, 0.7);
+    scrollbar-width: thin;
+    scrollbar-color: var(--the-thumb) var(--bg-color);
+  }
+
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--bg-color);
+    width: 8px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--the-thumb);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    -webkit-animation-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+    -o-transition-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
