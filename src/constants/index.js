@@ -1,3 +1,5 @@
+export const URL_BACKEND_LOCAL = "http://localhost:5001"
+export const URL_BACKEND_PROD = "https://chatapp-backend-7fzp.onrender.com"
 export const THEMES = [
   "light",
   "dark",

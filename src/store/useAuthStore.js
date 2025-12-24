@@ -2,8 +2,9 @@ import { create } from "zustand";
 import { axiosInstance } from "../lib/axios.js";
 import toast from "react-hot-toast";
 import { io } from "socket.io-client";
+import { URL_BACKEND_LOCAL, URL_BACKEND_PROD } from "../constants/index.js";
 
-const BASE_URL = import.meta.env.MODE === "development" ? "http://localhost:5001" : "https://chatapp-backend-7fzp.onrender.com";
+const BASE_URL = import.meta.env.MODE === "development" ? URL_BACKEND_LOCAL : URL_BACKEND_PROD;
 
 export const useAuthStore = create((set, get) => ({
   authUser: null,
